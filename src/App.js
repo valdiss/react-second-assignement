@@ -31,8 +31,8 @@ class App extends Component {
   render() {
     let chars = null;
     if (this.state.chars.length > 0) {
-      chars = this.state.chars.map((uniqueChar, index) => {
-        return <Char key={index} click={() => { this.removeCharHandler(index) }} char={uniqueChar} />
+      chars = this.state.chars.map((char, index) => {
+        return <Char key={index} click={this.removeCharHandler.bind(this, index)} char={char} />
       })
     }
 
